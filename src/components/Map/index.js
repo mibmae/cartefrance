@@ -37,10 +37,17 @@ function Map() {
     }
   };
 
+  function scrollToBottom(id) {
+    const div = document.getElementById(id);
+    div.scrollTop = div.scrollHeight;
+    div.animate({ scrollTop: div.scrollHeight });
+  }
+
   const handleOnChange = (e) => {
     const dep = e.map((t) => France.locations.find((el) => el.id === t.id));
     document.getElementById('locations').style.display = 'block';
     setDepartements(dep);
+    scrollToBottom('locations');
   };
 
   const displayDep = (e) => {
@@ -79,11 +86,9 @@ function Map() {
   };
 
   // useEffect(() => {
-  //   // setTimeout(() => {
-  //   //   const div = document.getElementById('locations');
-  //   //   div.style.display = 'none';
-  //   // }, -10);
-  // }, [departements]);
+  //     const div = document.getElementById('locations');
+  //     div.style.display = 'none';
+  // }, []);
   return (
 
     <div className="map-container">
@@ -111,7 +116,7 @@ function Map() {
       <div className="result">
         <ul onClick={handleOnClick}> {results.length >= 1 ? (results.map((e) => <li id={e.id} key={e.id}>{e.name}</li>)) : ('Aucune région trouvée')} </ul>
       </div> */}
-      <div className="locations" id="locations"> {departements.map((e) => <li className="items" key={e.id}>{e.name} ({e.id})</li>)}
+      <div className="locations" id="locations">Départements sélectionnés {departements.length >= 1 ? (departements.map((e) => <li className="items" key={e.id}>{e.name} ({e.id})</li>)) : ('')}
 
       </div>
       <div id="tooltip" className="tooltip">{nameDepartements}</div>

@@ -20,7 +20,7 @@ left: 20px;
 
 .locations {
     padding: 1rem;
-    width: 14%;
+    width: 29%;
     margin: 9rem 8rem;
     // font-family: Cambria,Cochin,Georgia,Times,Times New Roman,serif;
     
@@ -33,9 +33,10 @@ left: 20px;
     :nth-child(2n) {
         background-color: #F4BC44;
     }
-    @media screen and (max-width: 500px) {
+    @media screen and (max-width: 900px) {
         margin: 0 auto;
         max-height: 150px;
+        margin-top: 2rem;
         width: 90%;
     }
 }
@@ -44,10 +45,14 @@ left: 20px;
 
 }
 .map-container {
-    width: 100%;
+    width: 66%;
     display: flex;
-    flex-wrap: wrap;
-    margin-top: 4rem;
+    // flex-wrap: wrap;
+    margin: 4rem auto auto;
+    @media screen and (max-width: 900px) {
+        flex-wrap: wrap;
+        width: 93%;
+    }
 }
 
 .svg-map {
