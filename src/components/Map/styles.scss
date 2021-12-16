@@ -1,0 +1,109 @@
+.svg_map_selected {
+    background-color: black;
+}
+
+.tooltip {
+    display: none;
+    position: absolute;
+    @media screen and (max-width: 500px) {
+font-size: small;
+
+padding: 0.5rem;
+left: 20px;
+    }
+    font-size: 1.5rem;
+    left: 500px;
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: lightgray;
+}
+
+.locations {
+    padding: 1rem;
+    width: 14%;
+    margin: 9rem 8rem;
+    // font-family: Cambria,Cochin,Georgia,Times,Times New Roman,serif;
+    
+    text-align: justify;
+    overflow-y: scroll;
+    max-height: 300px;
+    list-style-type: none;
+    background-color: #a1d99b;
+    border-radius: 2rem;
+    :nth-child(2n) {
+        background-color: #F4BC44;
+    }
+    @media screen and (max-width: 500px) {
+        margin: 0 auto;
+        max-height: 150px;
+        width: 90%;
+    }
+}
+.bborder {
+    border: 1px solid blue;
+
+}
+.map-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 4rem;
+}
+
+.svg-map {
+    @media screen and (max-width: 500px) {
+		width: 90%;
+		margin-top: 2rem;
+	}
+    &__location {
+        &[aria-checked=true] {
+			// fill: #f4bc44;
+			fill: #f0f;
+		}
+    }
+}
+.svg-map__location {
+    fill: #a1d99b;
+    cursor: pointer;
+ }
+
+    .items {
+        padding: 0.3em;
+        font-size: 1.2rem;
+    }
+
+    .search {
+        display: flex;
+        position: absolute;
+        left: 50%;
+    }
+
+    .result {
+        border: 3px solid orange;
+        background-color: white;
+        border-radius: 5px;
+        position: absolute;
+        left: 50%;
+        top: 4rem;
+        width: 13%;
+        text-align: left;
+        cursor: pointer;
+        @media screen and (max-width: 500px) {
+font-size: small;
+width: 50%;
+
+        }
+        
+    }
+
+    input {
+        width: 110%;
+        border-radius: 5px;
+        border: 3px solid orange;
+        height: 2rem;
+        font-size: 1rem;
+    }
+
+    ul{
+        list-style-type:none;
+    }
